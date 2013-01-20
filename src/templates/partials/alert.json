@@ -1,0 +1,64 @@
+{
+  "default": {
+    "modifier": "",
+    "block": true,
+    "heading": "Default",
+    "strong": "Default Alert!",
+    "message": "You have no new messages."
+  },
+  "warning": {
+    "modifier": "alert-warning",
+    "block": true,
+    "heading": "Warning",
+    "strong": "Warning!",
+    "message": "Best check yo self, you're not looking too good."
+  },
+  "error": {
+    "modifier": "alert-error",
+    "block": true,
+    "heading": "Error",
+    "strong": "Oh Snap!",
+    "message": "Change a few things up and try submitting again."
+  },
+  "success": {
+    "modifier": "alert-success",
+    "block": true,
+    "heading": "Success",
+    "strong": "Well Done!",
+    "message": "You successfully read this important alert message."
+  },
+  "info": {
+    "modifier": "alert-info",
+    "block": true,
+    "heading": "Information",
+    "strong": "Heads Up!",
+    "message": "This alert needs your attention, but it's not super important."
+  },
+  "inverse": {
+    "modifier": "alert-inverse",
+    "block": true,
+    "heading": "Information",
+    "strong": "Heads Up!",
+    "message": "This alert needs your attention, but it's not super important."
+  },
+  "placeholder": {
+    "modifier": "alert-placeholder",
+    "message": "No records to display."
+  },
+  "empty-data-grid": {
+    "modifier": "alert-empty",
+    "close-button": false,
+    "block": false,
+    "heading": "Empty",
+    "strong": "You have no records. ",
+    "record-type": "Sales Quotes",
+    "message": "Try selecting a different View from the dropdown list above to display some records."
+  },
+  "alert-fixed-top": {
+    "id": "global-banner",
+    "modifier": "alert-fixed-top",
+    "style": "display: block;",
+    "close-button": true,
+    "message": "<span>Get 50% off your first month's fees!</span><a class=\"alert-link\" href=\"#\" title=\"Learn More\" target=\"_blank\">Learn More</a>"
+  }
+}

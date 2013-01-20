@@ -1,0 +1,23 @@
+{
+  "src": "<%= defaults.root %>/src",
+
+  "assets": "<%= defaults.src %>/assets",
+  "css": "<%= assets %>/css",
+  "fonts": "<%= assets %>/fonts",
+  "ico": "<%= assets %>/ico",
+  "img": "<%= assets %>/img",
+  "js": "<%= assets %>/js",
+
+  "less": "<%= defaults.src %>/less",
+  "data": "<%= defaults.src %>/data",
+  "pages": "<%= defaults.src %>/templates/pages",
+  "layouts": "<%= defaults.src %>/templates/layouts",
+  "partials": "<%= defaults.src %>/templates/partials",
+  "snippets": "<%= defaults.src %>/templates/snippets",
+
+  "all": [
+    "<%= pages %>",
+    "<%= partials %>"
+  ]
+}
+

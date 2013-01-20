@@ -1,0 +1,17 @@
+{{#person.users}}
+  <li class="person">
+    <strong class="fullname">{{firstname}} {{lastname}}</strong>
+    <div class="username"><a href="http://twitter.com/{{username}}">Twitter: @{{username}}</a></div>
+    <div class="email"><a href="mailto:{{email}}">Email: {{email}}</a></div>
+    <div class="phone">Phone: {{phone}}</div>
+    <div class="since">User since <time class="date">{{member-since}}</time></div>
+    <div class="group">Member of <a href="http://sellside.com/groups/{{../users.group}}">{{../person.group}}</a></div>
+  </li>
+{{/person.users}}
+{{#unless person.users}}
+  <li class="empty">
+    {{#alert.placeholder}}
+    {{> alert }}
+    {{/alert.placeholder}}
+  </li>
+{{/unless}}

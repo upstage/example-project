@@ -1,0 +1,106 @@
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Extensions</h1>
+    <p class="lead">Custom extensions built just for Sellside.</p>
+  </div>
+</header>
+
+  <div class="container" style="margin-bottom: 150px;">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 sidebar">
+        <ul class="nav nav-list sidenav">
+          <li class="{{dropdown}}"><a href="#dropdowns">Dropdown Notifications</a></li>
+          <li class="{{sidenav}}"><a href="#sidenavs">Sidenavs</a></li>
+          <li class="{{alert}}"><a href="#alerts">Alerts</a></li>
+          <li><a href="#menus">Menus</a></li>
+          <li><a href="#toolbars">Toolbars</a></li>
+          <li><a href="#dropShadows">Drop Shadows</a></li>
+          <li><a href="#tasks">Tasks</a></li>
+          <li><a href="#numbers">Number Labels</a></li>
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#buttonGroups">Button groups</a></li>
+          <li><a href="#buttonDropdowns">Button dropdowns</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+
+
+
+        <!-- People
+        ================================================== -->
+        <section id="people">
+          <div class="page-header">
+            <h1>People</h1>
+          </div>
+
+          {{> people }} {{! this is not the preferred method. it's better to wrap the partial like the one below. }}
+
+          <hr>
+
+          <p>Showing <strong>{{person.users.length}}</strong> people in search results.</p>
+          <ul class="people">
+            {{> person }}
+          </ul>
+        </section>
+
+
+
+         <!-- Alerts
+        ================================================== -->
+        <section id="alerts">
+          <div class="page-header">
+            <h1>Alerts</h1>
+          </div>
+
+          {{> alert-simple }}
+
+          {{#alert.default}}
+          {{> alert }}
+          {{/alert.default}}
+
+          {{#alert.warning}}
+          {{> alert }}
+          {{/alert.warning}}
+
+          {{#alert.info}}
+          {{> alert }}
+          {{/alert.info}}
+
+          {{#alert.error}}
+          {{> alert }}
+          {{/alert.error}}
+
+          {{#alert.success}}
+          {{> alert }}
+          {{/alert.success}}
+
+          {{#alert.important}}
+          {{> alert }}
+          {{/alert.important}}
+
+          {{#alert.inverse}}
+          {{> alert }}
+          {{/alert.inverse}}
+
+          {{#alert.placeholder}}
+          {{> alert }}
+          {{/alert.placeholder}}
+
+          {{#alert.empty-data-grid}}
+          {{> alert }}
+          {{/alert.empty-data-grid}}
+
+          {{#alert.alert-fixed-top}}
+          {{> alert }}
+          {{/alert.alert-fixed-top}}
+
+        </section>
+
+      </div>{{! /span9 }}
+    </div>{{! row}}
+  </div>{{! /.container }}

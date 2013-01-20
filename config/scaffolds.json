@@ -1,0 +1,20 @@
+{
+  "scaffold": {
+    "name": "Scaffold Name",
+    "theme": "path/to/variables.less",
+    "pages": {
+      "gallery": {
+        "layout": "<%= layouts %>/lists/tiles-fluid.mustache",
+        "content": "<%= content %>/custom/gallery.md"
+      },
+      "blog": {
+        "layout": "<%= layouts %>/categories/categories-blog.mustache",
+        "content": ""
+      },
+      "about": {
+        "layout": "<%= layouts %>/about/about.mustache",
+        "content": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "s3": "my/s3/bucket",
+  "assets": "dist/assets/",
+  "carousel": {
+    "title": "Carousel Example",
+    "styles": "page-carousel"
+  },
+  "hero": {
+    "title": "Hero Example",
+    "styles": "page-hero"
+  },
+  "CSS": {
+    "title": "CSS"
+  }
+}

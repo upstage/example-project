@@ -1,0 +1,5 @@
+
+/* Remove negative top positioning on .close icon */
+.alert .close {
+  top: 0;
+}

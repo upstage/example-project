@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{theme.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{theme.description}}">
+    <meta name="author" content="{{theme.author}}">
+
+    <!-- styles -->
+    <link href="{{assets}}css/bootstrap.css" rel="stylesheet">
+
+    <!-- Fav and touch icons -->
+    {{> favicons }}
+
+    {{> html5-shim }}
+
+
+{{! Body
+====================================================== }}
+{{> body }}
+
+
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {{> javascript-footer }}
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "layout": "fullpost",
+  "partial": "fullpost",
+  "partials": {
+    "sidebar": ["author", "about-post"]
+  },
+  "page-details": {
+    "author": ["gravatar"]
+  }
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block metadescription %}{% if meta_description %}<meta name="description" content="{{ meta_description }}" />{% endif %}{% endblock %}
+{% block metakeywords %}{% if meta_keywords %}<meta name="keywords" content="{{ meta_keywords }}" />{% endif %}{% endblock %}
+{% block pagetitle %}{{ post_title }}{% endblock %}
+{% block main_section %}
+<section class="main-section blog-section" id="blog-posts">
+  {{ post_data|safe }}
+</section>
+{% endblock %}
+{% block extra_inline_js %}
+$(function() {
+  setupLinks();
+  adjustBlogHeaders();
+  {% if DISQUS_INTEGRATION_ENABLED %}
+  embedDisqus();
+  {% endif %}
+});
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "about": {
+    "default": "<%= layouts %>/about.mustache",
+    "two-column": "<%= layouts %>/about-two-column-sidebar.mustache",
+    "tiled": "<%= layouts %>/about-tiled.mustache"
+  },
+  "contact": {
+    "default": "<%= layouts %>/contact.mustache",
+    "two-column": "<%= layouts %>/contact-two-column-sidebar.mustache",
+    "map": "<%= layouts %>/contact-with-map.mustache"
+  }
+}

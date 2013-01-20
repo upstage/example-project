@@ -1,0 +1,23 @@
+{{#example}}
+<div class="alert {{modifier}}" id="{{id}}" {{#if style}}style="{{style}}"{{/if}}>
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  {{#if alert-block}}
+  <h4 class="alert-heading">{{heading}}</h4>
+  {{/if}}
+  {{#strong}}<strong>{{strong}}</strong>{{/strong}} {{{message}}}
+</div>
+
+
+<hr>
+
+<code>alert-fixed-top</code>
+<div class="alert alert-fixed-top" id="global-banner" style="display: block;">
+  <div class="container">
+    <button type="button" class="close-button" data-dismiss="alert">
+      <span class="close">&times;</span>
+    </button>
+    <span>Get 50% off your first month's fees!</span>
+    <a class="alert-link" href="#" title="Learn More" target="_blank">Learn More</a>
+  </div>
+</div>
+{{/example}}

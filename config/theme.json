@@ -1,0 +1,10 @@
+{
+  "name": "Desk",
+  "title": "<%= theme.name %> &middot; <%= theme.subtitle %>",
+  "subtitle": "A beautiful responsive theme from <%= theme.vendor %>",
+  "attribution": "<%= theme.subtitle %>",
+  "tagline": "<%= theme.subtitle %>",
+  "vendor": "Toolkit",
+  "description": "A beautiful, responsive theme. By <%= theme.vendor %>",
+  "paths": "config/paths.json"
+}

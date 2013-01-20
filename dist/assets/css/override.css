@@ -1,0 +1,109 @@
+
+/* Remove negative top positioning on .close icon */
+.alert .close {
+  top: 0;
+}
+
+
+
+/* fixed alerts */
+.alert-fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  line-height: 50px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #999;
+  text-shadow: none;
+  text-align: left;
+  background: #25272A;
+  border-bottom: 1px solid #444;
+  z-index: 2000;
+}
+
+.alert-fixed-top span {
+  margin: 0 9px 7px 0;
+}
+
+.alert-fixed-top .alert-link {
+  display: inline-block;
+  font-weight: bold;
+  color: #D24D33;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.alert-link:hover {
+  color: #FFF;
+}
+
+.alert-fixed-top .close-button {
+  position: relative;
+  float: right;
+  height: 28px;
+  width: 28px;
+  background: #444649;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.alert-fixed-top .close {
+  top: 50%;
+  right: 50%;
+  margin-top: -1px;
+  margin-right: -7px;
+  line-height: 28px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: middle;
+  color: rgba(255,255,255,.75);
+  margin-left: 1px;
+}
+.alert-fixed-top .close-button:hover {
+  background: rgba(255,255,255,.85);
+}
+.alert-fixed-top .close-button:hover .close {
+  color: #444649;
+}
+
+#ie7 .alert-fixed-top {
+  display: none;
+}
+
+/* 600px
+=================================================== */
+
+@media only screen and (min-width: 600px) {
+  .alert-fixed-top .alert-link {
+    display: inline-block;
+  }
+  .alert-fixed-top .close-button {
+    position: absolute;
+    right: 150px;
+    top: 12px;
+  }
+}
+
+/* 768px
+=================================================== */
+
+@media only screen and (min-width: 768px) {
+  .alert-fixed-top {
+    color: #FFF;
+    text-align: center;
+  }
+  .alert-fixed-top span {
+    display: inline;
+  }
+  .alert-fixed-top .container {
+    width: auto;
+  }
+  .alert-link {
+    display: inline-block;
+  }
+}

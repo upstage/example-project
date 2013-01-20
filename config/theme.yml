@@ -1,0 +1,36 @@
+---
+# Theme Metadata
+name: Theme Name
+vendor: Toolkit
+disqus_shortname: toolkit
+long: |
+  Desk &middot; A beautiful, responsive theme.
+description: |
+  A beautiful, responsive theme. By <%= theme.author %>
+
+
+# Theme Paths
+root: ../../
+assets: src/assets
+css: <%= assets %>/css
+fonts: <%= assets %>/fonts
+ico: <%= assets %>/ico
+img: <%= assets %>/img
+js: <%= assets %>/js
+less: src/less
+data: src/data
+templates: src/templates
+pages: src/templates/pages
+layouts: src/templates/layouts
+partials: src/templates/partials
+snippets: src/templates/snippets
+
+all:
+- <%= src.css %>
+- <%= src.js %>
+- <%= src.less %>
+- <%= src.layouts %>
+- <%= src.pages %>
+- <%= src.partials %>
+- <%= src.snippets %>
+...

@@ -1,0 +1,37 @@
+[
+  {
+    "state": "active",
+    "url": "./index.html",
+    "text": "Home"
+  },
+  {
+    "state": "",
+    "url": "./getting-started.html",
+    "text": "Get started"
+  },
+  {
+    "state": "",
+    "url": "./css.html",
+    "text": "Core CSS"
+  },
+  {
+    "state": "",
+    "url": "./components.html",
+    "text": "Components"
+  },
+  {
+    "state": "",
+    "url": "./javascript.html",
+    "text": "JavaScript"
+  },
+  {
+    "state": "",
+    "url": "./index.html",
+    "text": "Customize"
+  },
+  {
+    "state": "",
+    "url": "./gallery.html",
+    "text": "Gallery"
+  }
+]

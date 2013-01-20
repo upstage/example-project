@@ -1,0 +1,54 @@
+//
+// Fixed alerts
+// ------------------------------------------------------
+
+
+
+// COMMON STYLES
+// -------------
+
+// Shared (top/bottom) styles
+.alert-fixed-top,
+.alert-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: @zindex-navbar-fixed + 1;
+  overflow: visible;
+  padding: 0 20px;
+  margin: 0; // remove default margins
+  border-radius: 0;  // reset border-radius
+}
+
+// Set width to auto for default container and then reset it below using the #gridSystem mixin
+.alert-fixed-top .container {
+  width: auto;
+}
+
+// Reset container width
+// Required here as we reset the width earlier on and the grid mixins don't override early enough
+.alert-fixed-top .container,
+.alert-fixed-bottom .container {
+  #grid > .core > .span(@grid-columns);
+}
+
+// Fixed to top
+.alert-fixed-top {
+  top: 0;
+  margin-bottom: @line-height-base;
+
+  // Prevent floats from breaking the alert
+  .clearfix();
+}
+
+// Fixed to bottom
+.alert-fixed-bottom {
+  bottom: 0;
+  margin-top: @line-height-base;
+}
+
+
+
+
+
+

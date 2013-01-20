@@ -1,0 +1,101 @@
+// this is a sandobx for 'config.json' ideas
+
+{
+  // Site-wide site/defaults. These are essentially "globals"
+  "meta": {
+    "designer": "Jon Schlinkert",
+    "company": "Themestack.io", // theme vendor
+    "name": "name of the theme",
+    "title": "Site Title",
+    "subtitle": "Site sub-title goes here!",
+    "root": "./",
+    "siteUrl": "http://sellside.com/",
+    "robots": "Disallow /",
+    "sitemapPriorities": {
+      "default": "0.5",
+      "index": "0.8",
+      "subpage": "0.7"
+    },
+    "gaAccountId": "UA-xxxxxxxx-1",
+    "setSiteId": "xxxxxxxx",
+    "fbAppId": "1234v",
+    // --- OR ---
+    "analytics": {
+      "gaAccountId": "UA-xxxxxxxx-1", // <%= analytics.gaAccountId %>
+      "setSiteId": "xxxxxxxx",
+      "fbAppId": "1234v",
+    }
+  },
+  // Scaffolds include pages and a theme. Pages include a default
+  // layout, which can be overridden. Scaffold values can be a path/file or false.
+  // If false you must override with custom variables, as in next example.
+  "scaffold": "<%= scaffolds %>/blogs/some-blog-scaffold/scaffold.json",
+  // --- OR --- maybe only the name of the scaffold is required
+  "scaffold": "some-blog-scaffold",
+  // --- OR ---
+  // Scaffold can be defined from scratch here.
+  "scaffold": {
+    "theme": "<%= themes %>/blogs/some-blog-variant/variables.less",
+    "pages": {
+      "home.html": {
+        "title": "Home &middot; <%= meta.title %>",
+        "layout": "<%= layouts %>/<%= template-engine %>/full-width.<%= template-engine %>",
+        "content": "<%= theme %>.json"
+      },
+      "about.html": {
+        "title": "About Us &middot; <%= meta.title %>",
+        "layout": "<%= layouts %>/full-width.mustache",
+        "content": "<%= theme %>.json"
+      },
+      "contact.html": {
+        "title": "Contact Us &middot; <%= meta.title %>",
+        "layout": "<%= layouts %>/full-width.mustache",
+        "content": "<%= theme %>.json"
+      },
+      "blog.html": {
+        "title": "Blog &middot; <%= meta.title %>",
+        "layout": "<%= layouts %>/two-column.mustache",
+        "content": "<%= theme %>.json"
+      },
+      "catalog.html": {
+        "title": "Products &middot; <%= meta.title %>",
+        "layout": "<%= layouts %>/gallery.mustache",
+        "content": "<%= theme %>.json"
+      }
+    }
+  },
+  // Custom site variables using lodash and/or handlebars
+  // templates, processed both in the config file and HTML/templates.
+  // Variables can be created on the fly without requiring any
+  // additional code.
+  "variables": {
+    "brand": "<%= title %>",
+    "tagline": "<%= subtitle %>"
+  },
+  // Concept for setting context via "modes" to override site.
+  // Any object created under "mode" is registered as a context, but
+  // only objects that already exist in the site object will be
+  // recognized as valid.
+  "mode": {
+    "production": {
+      "root": "./",
+      "siteUrl": "http://sellside.com/",
+      "robots": "Disallow /",
+      "sitemapPriorities": {
+        "default": "0.5",
+        "index": "0.8",
+        "subpage": "0.7"
+      }
+    },
+    "development": {
+      "root": "./",
+      "siteUrl": "https://sellside.azurewebsites.net",
+      "robots": "Disallow /",
+      "sitemapPriorities": {
+        "default": "0.5",
+        "index": "0.8",
+        "subpage": "0.7"
+      }
+    }
+  }
+}

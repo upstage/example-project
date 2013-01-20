@@ -1,0 +1,8 @@
+{
+  "defaults": {
+    "layout": ".",
+    "partials": "{}",
+    "data": "{}",
+    "assets": "."
+  }
+}

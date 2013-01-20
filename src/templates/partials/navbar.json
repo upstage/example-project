@@ -1,0 +1,10 @@
+{
+  "global-navbar": {
+    "modifier": "navbar-fixed-top",
+    "responsive": true
+  },
+  "static": {
+    "modifier": "navbar-static-top",
+    "responsive": false
+  }
+}

@@ -1,0 +1,9 @@
+<!-- alert {{modifier}} -->
+<div class="alert {{modifier}}" id="{{id}}"{{#if style}} style="{{style}}"{{/if}}>
+  {{#if alert-fixed-top}}<div class="container">{{/if}}
+    {{#if close-button}}<button type="button" class="close-button" data-dismiss="alert">
+      <span class="close">&times;</span>
+    </button>{{else}}<button type="button" class="close" data-dismiss="alert">&times;</button>{{/if}}
+    {{#if alert-block}}<h4 class="alert-heading">{{heading}}</h4>{{/if}}{{#if strong}}<strong>{{strong}}</strong>{{/if}} {{{message}}}
+  {{#if alert-fixed-top}}</div>{{/if}}
+</div>
