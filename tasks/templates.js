@@ -118,7 +118,10 @@ module.exports = function(grunt) {
     // try to get any yaml context
     var layoutData = frontMatter.extract(layout);
     // merge any layoutData with options
+    logBlock("options before: ", util.inspect(options));
     options = _.extend(layoutData.context, options);
+    logBlock("options after: ", util.inspect(options));
+
     layout = Handlebars.compile(layoutData.content);
 
     // load partials if specified
@@ -174,7 +177,7 @@ module.exports = function(grunt) {
         complete++;
       });
       grunt.log.writeln('\n');
-      logBlock("options.data", util.inspect(options.data));
+      //logBlock("options.data", util.inspect(options.data));
     }
 
     options.layout     = layout;
@@ -276,7 +279,7 @@ module.exports = function(grunt) {
     context.pageName      = _(filename).humanize();
     context.pageName      = filename;
 
-    options.data = null;
+    //options.data = null;
 
     // try to get any yaml context from the page
     pageData = frontMatter.extract(page);
