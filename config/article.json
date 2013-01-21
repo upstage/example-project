@@ -1,10 +1,16 @@
 {
-  "layout": "fullpost",
-  "partial": "fullpost",
-  "partials": {
-    "sidebar": ["author", "about-post"]
+  "name": "Sea Urchins Caught Robbing Bank in San Antonio",
+  "layout": "path/to/layouts/fullpost.layout",
+  "meta": {
+    "author": {
+      "firstname": "Jon",
+      "lastname": "Schlinkert",
+      "gravatar": "path/to/gravatar.jpg"
+    },
+    "post-date": "<%= grunt.template.today(\"yyyy-mm-dd HH:MM:SS\") %>"
   },
-  "page-details": {
-    "author": ["gravatar"]
+  "partials": {
+    "comment": "this partials thing is just an idea",
+    "sidebar": ["author", "about-post"]
   }
 }

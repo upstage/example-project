@@ -1,0 +1,5 @@
+{
+  "name": "gallery",
+  "layout": "<%= layouts %>/lists/tiles-fluid.mustache",
+  "content": "<%= content %>/custom/gallery.md"
+}

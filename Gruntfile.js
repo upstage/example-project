@@ -5,9 +5,10 @@
  * Copyright (c) 2012 Jon Schlinkert
  */
 
-'use strict';
 
 module.exports = function(grunt) {
+
+  'use strict';
 
   var theme  = grunt.file.readJSON('config/theme.json');
 
@@ -37,27 +38,6 @@ module.exports = function(grunt) {
         engine: "handlebars",
         language: "en-us"
       },
-      examples: {
-        options: {
-          setAccount: 'NA',
-          setSiteId: 'NA',
-          fbAppId: '',
-
-          production: false,
-          dev: true,
-          layout: 'src/templates/layouts/layout-basic.mustache',
-          data:  ['src/data/*.json', 'src/templates/**/*.json'],
-          partials:  [
-            'src/templates/partials/**/*.mustache',
-            'src/templates/snippets/**/*.mustache'
-          ],
-          assets: 'dist/assets'
-        },
-        files: {
-          'dist/test/examples': ['src/templates/pages/no-layout/*.mustache']
-        }
-      },
-
       project: {
         options: {
           setAccount: 'NA',
@@ -75,10 +55,10 @@ module.exports = function(grunt) {
         },
         files: {
           // Compile each page in the project.
-          'dist/': ['src/templates/pages/*.mustache']
+          'dist': ['src/templates/pages/*.mustache']
         }
       },
-      pages: {
+      testDocs: {
         options: {
           setAccount: 'NA',
           setSiteId: 'NA',
@@ -86,7 +66,7 @@ module.exports = function(grunt) {
 
           production: false,
           dev: true,
-          layout: 'src/templates/layouts/layout-basic.mustache',
+          layout: 'src/templates/layouts/layout.mustache',
           partials:  [
             'src/templates/partials/**/*.mustache',
             'src/templates/snippets/**/*.mustache'
@@ -95,13 +75,33 @@ module.exports = function(grunt) {
           assets: 'dist/assets'
         },
         files: {
-          'dist/test/components/pages': [
-            'src/templates/pages/**/*.mustache'
+          'test/html': [
+            'src/templates/pages/*.mustache'
           ]
         }
       },
+      testDocsExamples: {
+        options: {
+          setAccount: 'NA',
+          setSiteId: 'NA',
+          fbAppId: '',
 
-      partials: {
+          flatten: true,
+          production: false,
+          dev: true,
+          layout: 'src/templates/layouts/layout-basic.mustache',
+          data:  ['src/data/*.json', 'src/templates/**/*.json'],
+          partials:  [
+            'src/templates/partials/**/*.mustache',
+            'src/templates/snippets/**/*.mustache'
+          ],
+          assets: 'dist/assets'
+        },
+        files: {
+          'test/html/examples': ['src/templates/pages/no-layout/*.mustache']
+        }
+      },
+      testPartials: {
         options: {
           dev: true,
           production: false,
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
           assets: 'dist/assets'
         },
         files: {
-          'dist/test/components/partials/': ['src/templates/partials/**/*.mustache']
+          'test/html/components': ['src/templates/partials/**/*.mustache']
         }
       }
     },
@@ -159,7 +159,7 @@ module.exports = function(grunt) {
     grunt.util.async.forEachSeries(files, function(gruntfile, next) {
       grunt.util.spawn({
         grunt: true,
-        args: ['--gruntfile', path.resolve(gruntfile)],
+        args: ['--gruntfile', path.resolve(gruntfile)]
       }, function(error, result) {
         if (error) {
           grunt.log.error(result.stdout).writeln();
