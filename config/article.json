@@ -1,6 +1,6 @@
 {
   "name": "Sea Urchins Caught Robbing Bank in San Antonio",
-  "layout": "path/to/layouts/fullpost.layout",
+  "layout": "path/to/layouts/fullpost.json",
   "meta": {
     "author": {
       "firstname": "Jon",
