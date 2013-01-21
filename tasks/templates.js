@@ -19,7 +19,10 @@ module.exports = function(grunt) {
   var Handlebars  = require('handlebars'),
       path        = require('path'),
       fs          = require('fs'),
-      util        = require('util');
+      util        = require('util'),
+      assemble    = require('assemble');
+
+  var frontMatter = assemble.FrontMatter({fromFile: false});
 
   var extensions = {
     "handlebars"  : "handlebars",
@@ -111,7 +114,15 @@ module.exports = function(grunt) {
     // load layout
     var layoutName = _.first(layout.match(filenameRegex)).replace(fileExtRegex,'');
     layout = fs.readFileSync(layout, 'utf8');
-    layout = Handlebars.compile(layout);
+
+    // try to get any yaml context
+    var layoutData = frontMatter.extract(layout);
+    // merge any layoutData with options
+    logBlock("options before: ", util.inspect(options));
+    options = _.extend(layoutData.context, options);
+    logBlock("options after: ", util.inspect(options));
+
+    layout = Handlebars.compile(layoutData.content);
 
     // load partials if specified
     if(partials && partials.length > 0) {
@@ -125,7 +136,11 @@ module.exports = function(grunt) {
         if(complete%increment == 0) log.write('.'.cyan);
 
         var partial = fs.readFileSync(filepath, 'utf8');
-        partial = Handlebars.compile(partial);
+        // try go get any yaml context
+        var partialData = frontMatter.extract(partial);
+        // add partial context to the options.data object
+        options.data[filename] = _.extend(partialData.context, options.data[filename] || {});
+        partial = Handlebars.compile(partialData.content);
 
         // register the partial with handlebars
         Handlebars.registerPartial(filename, partial);
@@ -162,7 +177,7 @@ module.exports = function(grunt) {
         complete++;
       });
       grunt.log.writeln('\n');
-      logBlock("options.data", util.inspect(options.data));
+      //logBlock("options.data", util.inspect(options.data));
     }
 
     options.layout     = layout;
@@ -257,26 +272,25 @@ module.exports = function(grunt) {
 
     var page                  = fs.readFileSync(src, 'utf8'),
         layout                = options.layout,
+        data                  = options.data,
         context               = {};
-        context.layoutName    = _(options.layoutName).humanize();
-        context.pageName      = _(filename).humanize();
-        context.pageName      = filename;
-        // context.title         = _(filename).humanize();
-        // context.vendor        = options.vendor;
-        // context.theme         = options.theme;
-        // context.tagline       = options.tagline;
-        // context[filename]     = 'active';
-        context.production    = options.production;
-        context.dev           = options.dev;
-        context.setAccount    = options.setAccount;
-        context.setSiteId     = options.setSiteId;
-        context.assets        = options.assets;
+
+    context.layoutName    = _(options.layoutName).humanize();
+    context.pageName      = _(filename).humanize();
+    context.pageName      = filename;
+
+    //options.data = null;
+
+    // try to get any yaml context from the page
+    pageData = frontMatter.extract(page);
+
 
     try {
-      page = Handlebars.compile(page);
+      page = Handlebars.compile(pageData.content);
       Handlebars.registerPartial("body", page);
 
-      context = _.extend(context, options.data);
+      context = _.extend(context, options, data, pageData.context);
+
       page = layout(context);
 
       callback(null, page);
