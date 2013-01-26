@@ -4,14 +4,16 @@
     "block": true,
     "heading": "Default",
     "strong": "Default Alert!",
-    "message": "You have no new messages."
+    "message": "You have no new messages.",
+    "count": 1
   },
   "warning": {
     "modifier": "alert-warning",
     "block": true,
     "heading": "Warning",
     "strong": "Warning!",
-    "message": "Best check yo self, you're not looking too good."
+    "message": "Best check yo self, you're not looking too good.",
+    "count": 5
   },
   "error": {
     "modifier": "alert-error",
