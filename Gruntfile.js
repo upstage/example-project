@@ -40,9 +40,6 @@ module.exports = function(grunt) {
       },
       project: {
         options: {
-          setAccount: 'NA',
-          setSiteId: 'NA',
-          fbAppId: '',
           production: false,
           dev: true,
           layout: 'src/templates/layouts/layout.mustache',
@@ -60,10 +57,6 @@ module.exports = function(grunt) {
       },
       testDocs: {
         options: {
-          setAccount: 'NA',
-          setSiteId: 'NA',
-          fbAppId: '',
-
           production: false,
           dev: true,
           layout: 'src/templates/layouts/layout.mustache',
@@ -82,10 +75,6 @@ module.exports = function(grunt) {
       },
       testDocsExamples: {
         options: {
-          setAccount: 'NA',
-          setSiteId: 'NA',
-          fbAppId: '',
-
           flatten: true,
           production: false,
           dev: true,

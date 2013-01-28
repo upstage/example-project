@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{title}} &middot; {{subtitle}}</title>
+    <title>{{theme.title}} &middot; {{theme.subtitle}}</title>
     <!-- <title>{{site}} &middot; {{description}}</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{description}}">
@@ -23,7 +23,7 @@
 
     {{> lazy-load }}
 
-    {{> google-analytics }}
+    {{> analytics-google }}
 
   </head>
 
@@ -144,7 +144,7 @@
     {{/dev}}
 
     {{#production}}
-    {{> google-analytics-footer }}
+    {{> analytics-google-footer }}
     {{/production}}
 
   </body>

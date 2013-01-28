@@ -1,7 +1,66 @@
 {
-  "author": "",
-  "name": "",
-  "version": "0.0.0",
-  "dependencies": {},
-  "devDependencies": {}
+  "name": "generate",
+  "description": "Dead-simple HTML, CSS, and JS generators and scaffolds for toolkit themes, templates and components.",
+  "version": "0.1.0",
+  "homepage": "http://generate.github.com/",
+  "author": {
+    "name": "Jon Schlinkert",
+    "email": "jon.schlinkert@sellside.com",
+    "url": "http://jonschlinkert.github.com/"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "bugs": "https://github.com/gruntjs/grunt/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/generate/toolkit.git"
+  },
+  "devDependencies": {
+    "grunt": "0.4.0rc4",
+    "grunt-contrib": "",
+    "grunt-lib-contrib": "https://github.com/gruntjs/grunt-lib-contrib/tarball/master",
+    "grunt-shell": "https://github.com/jonschlinkert/grunt-shell/tarball/master",
+    "grunt-recess": "https://github.com/sellside/grunt-recess/tarball/master",
+    "grunt-reload": "https://github.com/webxl/grunt-reload/tarball/master",
+    "express": "~3.0.5",
+    "handlebars": "",
+    "recess": "",
+    "less": "",
+    "lodash": "~1.0.0-rc.3",
+    "js-yaml": "~1.0.3",
+    "marked": "~0.2.7",
+    "highlight.js": "~7.3.0"
+  },
+  "keywords": [
+    "boilerplate",
+    "bootstrap",
+    "components",
+    "component",
+    "generator",
+    "handlebars",
+    "init",
+    "kickstart",
+    "LESS",
+    "modules",
+    "mustache",
+    "partials",
+    "preprocess",
+    "SASS",
+    "scaffold",
+    "static site",
+    "templating",
+    "templates",
+    "template",
+    "themes",
+    "toolkit",
+    "underscore",
+    "widgets"
+  ]
 }
