@@ -20,7 +20,8 @@ module.exports = function(grunt) {
       path        = require('path'),
       fs          = require('fs'),
       util        = require('util'),
-      assemble    = require('assemble');
+      assemble    = require('assemble'),
+      handlebarHelpers = require('./handlebars-helpers.js')(Handlebars);
 
   var frontMatter = assemble.FrontMatter({fromFile: false});
 
@@ -31,6 +32,9 @@ module.exports = function(grunt) {
     "handlebar"   : "handlebars",
     "mustache"    : "handlebars"
   };
+
+  // load handlebars helpers
+  handlebarHelpers.registerHelpers();
 
   grunt.registerMultiTask('templates', 'Compile template files to HTML with specified engines', function(){
 
